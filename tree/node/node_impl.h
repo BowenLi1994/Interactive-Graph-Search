@@ -6,7 +6,7 @@
 #pragma once
 
 template<class Label>
-Node<Label>::Node(ConstReference label) : label_(label) {}
+Node<Label>::Node(ConstReference label) : label_(label),depth_(0),sibling_number_(1),nex_right_sibling_(-1) {}
 
 template<class Label>
 const typename Node<Label>::SizeType Node<Label>::children_count() const {
@@ -25,7 +25,7 @@ Node<Label>& Node<Label>::add_child(Node<Label> child) {
 }
 
 template<class Label>
-const std::vector<Node<Label>>& Node<Label>::get_children() const {
+std::vector<Node<Label>>& Node<Label>::get_children(){
   return children_;
 }
 
@@ -58,11 +58,109 @@ bool Node<Label>::is_leaf() const {
 }
 
 template<class Label>
-void Node<Label>::set_parent(Node<Label>& parent){
-    parent_=&(parent);
+void Node<Label>::set_id(int id){
+    id_=id;
 }
 
 template<class Label>
-const Node<Label>* Node<Label>::get_parent() const{
-    return parent_;
+int Node<Label>::id() const{
+    
+    return id_;
 }
+
+template<class Label>
+void Node<Label>::set_depth(int depth){
+    
+    depth_=depth;
+}
+
+template<class Label>
+int Node<Label>::depth() const{
+    
+    return depth_;
+}
+
+template<class Label>
+void Node<Label>::set_sibling(const int sibling){
+    sibling_number_=sibling;
+}
+
+template<class Label>
+int Node<Label>::sibling() const{
+    
+    return sibling_number_;
+}
+
+template<class Label>
+void Node<Label>::set_right_sibling(int right_sibling){
+    
+    nex_right_sibling_=right_sibling;
+}
+
+template<class Label>
+int Node<Label>::right_sibling() const{
+    
+    return nex_right_sibling_;
+}
+
+template<class Label>
+void Node<Label>::print_all_label(){
+    
+    std::cout<<"label id: "<<this->id()<<" depth: "<<this->depth()<<" sibling number: "<<this->sibling()<<" next sibling: "<<this->right_sibling()<<std::endl;
+    
+    //this->print_parent();
+    int child_counter=0;
+    
+    if(this->children_count()!=0){
+        
+    for(auto child: children_){
+        std::cout<<"child "<<child_counter<<": id: "<<child.id()<<std::endl;
+        child_counter++;
+        }
+        
+    }
+    else{
+        std::cout<<"Leaf Node."<<std::endl;
+    }
+    
+    for(auto child: children_){
+        child.print_all_label();
+        
+    }
+    
+    
+    
+}
+
+
+template<class Label>
+void Node<Label>::pre_prosseing(){
+    
+    if(this->children_count()==0)
+        return;
+    
+    else{
+        //std::cout<<"current node: "<<this->id()<<std::endl;
+        int child_counter=0;
+        for(auto & child: this->get_children()){
+            
+            child.set_sibling((int)this->children_count());
+            if(child_counter!=(int)this->children_count()-1){
+                child.set_right_sibling(this->get_children()[child_counter+1].id());
+            }
+            
+            
+            child_counter++;
+        }
+        
+         for(auto & child: this->get_children()){
+             child.pre_prosseing();
+         }
+        
+        
+        
+    }
+    
+}
+
+

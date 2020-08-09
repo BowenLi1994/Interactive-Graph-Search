@@ -1,17 +1,16 @@
-/// \file tree/node/node.h
+/// \file node/node.h
 ///
 /// \details
 /// Contains the declaration of the Node class (represents a node in a tree).
 
 #pragma once
 
-
-
 #include <vector>
 #include <string>
 
 namespace node {
 
+/// \tparam Label Satellite data associated with the node.
 template <class Label>
 class Node {
 // Types and type aliases
@@ -36,13 +35,13 @@ public:
   ConstReference label() const;
 
   
-  
+  /// param Node to be added.
   Node<Label>& add_child(Node<Label> child);
 
   /// Returns the reference to children_ vector.
   ///
   /// \return Reference to children_ vector.
-  const std::vector<Node<Label>>& get_children() const;
+  std::vector<Node<Label>>& get_children();
 
   /// Calculates the size (number of nodes) in tree rooted at this. It traverses
   /// the entire subtree recursively.
@@ -52,7 +51,7 @@ public:
 
   /// Traverses the tree and collects string representations of all labels.
   ///
-  /// \return Vector with labels of all nodes.
+  /// return Vector with labels of all nodes.
   const std::vector<std::string> get_all_labels() const;
   void get_all_labels_recursion(std::vector<std::string>& labels) const;
 
@@ -60,20 +59,42 @@ public:
   ///
   /// \return True if this node is leaf, false otherwise.
   bool is_leaf() const;
+ 
     
-  void set_parent(Node<Label>& parent);
-  const Node<Label>* get_parent() const;
+  //id setter and getter
+  void set_id(int id);
+  int id() const;
     
+  //depth setter and getter
+  void set_depth(int depth);
+  int depth() const;
+    
+  /// getter and setter for sibling number and next right sibling node id
+  void set_sibling(int sibling);
+  int sibling() const;
+    
+  void set_right_sibling(const int right_sibling);
+  int right_sibling() const;
 
+
+    void print_all_label();
+    void pre_prosseing();
+    
+    
 // Member variables
 private:
+    
+  
   /// All children of this node.
   std::vector<Node<Label>> children_;
-  Node<Label>* parent_;
-    int id_;
-    int depth_;
+
   /// Data representing the label of this node. Only this Node object owns it.
   Label label_;
+    
+  int sibling_number_;
+  int nex_right_sibling_;
+  int id_;
+  int depth_;
 };
 
 // Implementation details

@@ -1,3 +1,8 @@
+/// \file parser/bracket_notation_parser_impl.h
+///
+/// \details
+/// Contains the implementation of the BracketNotationParser class.
+
 #pragma once
 
 /// This is currently a copy of the previous version but with the efficient
@@ -5,6 +10,10 @@
 node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
     const std::string& tree_string) {
 
+    
+  int id_counter=0;
+  int depth_counter=0;
+    
   std::vector<std::string> tokens = get_tokens(tree_string);
 
   // Tokenize the input string - get iterator over tokens.
@@ -23,6 +32,10 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
   Label root_label(match_str);
   node::Node<Label> root(root_label);
   node_stack.push_back(std::ref(root));
+    root.set_id(id_counter);
+    root.set_depth(depth_counter);
+    id_counter++;
+    depth_counter++;
 
   // Iterate all remaining tokens.
   while (tokens_begin != tokens_end) {
@@ -42,6 +55,11 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
       // Create new node.
       Label node_label(match_str);
       node::Node<Label> n(node_label);
+        n.set_id(id_counter);
+        n.set_depth(depth_counter);
+        id_counter++;
+        depth_counter++;
+        //n.set_sibling((int)node_stack.back().get().children_count());
 
       // Move n to become a child.
       // Return reference from add_child to the 'new-located' object.
@@ -52,8 +70,11 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
     if (match_str == kRightBracket) { // Exit node.
       node_stack.pop_back();
       ++tokens_begin; // Advance tokens.
+      depth_counter--;
     }
   }
+    
+  root.pre_prosseing();
   return root;
 }
 
