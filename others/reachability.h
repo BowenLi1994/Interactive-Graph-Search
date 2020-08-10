@@ -40,7 +40,7 @@ bool Reachability(const Node& start,Node& target,int & step){
     else{
         
         if(start.right_sibling()==-1){
-            if(target.id()>start_node_id)
+            if(target.id()>=start_node_id)
                 return true;
             else
                 return false;

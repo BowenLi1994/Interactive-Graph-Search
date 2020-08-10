@@ -32,30 +32,27 @@ void Topdown(Node &root, Node& target,bool & found,int &step);
 void Topdown(Node &root, Node& target,bool &found,int& step){
      
     
-    std::cout<<"node: "<<root.id()<<std::endl;
+    //std::cout<<"node: "<<root.id()<<std::endl;
     bool child_reach_target=false;
 
     //step++;
 
-        for(auto& child:root.get_children()){
-            if(!found){
-                //step++;
-                 if(Reachability::Reachability(child, target,step)){
+    for(auto& child:root.get_children()){
+        if(!found){
+            if(Reachability::Reachability(child, target,step)){
                      child_reach_target=true;
                      Topdown(child, target,found, step);
-                 }
             }
-            if(!child_reach_target){
-                target.set_depth(root.depth());
-                found=true;
-                
-            }
-            
         }
-        
+                   
+    }
     
-
-
+    if(!child_reach_target){
+        target.set_depth(root.depth());
+        found=true;
+                   
+    }
+        
 }
 
 
