@@ -18,19 +18,28 @@ namespace Reachability{
 
 
 
-bool Reachability(const Node& start,Node& target,int & step);
+bool Reachability(Node& start,Node& target,int & step);
 
 
 
 
 
-bool Reachability(const Node& start,Node& target,int & step){
+bool Reachability(Node& start,Node& target,int & step){
     
-    step++;
-    std::cout<<"search: "<<start.id()<<"-->"<<target.id()<<std::endl;
+    if(!start.is_checked()){
+        step++;
+        std::cout<<"search: "<<start.id()<<"-->"<<target.id()<<std::endl;
+    }
+    else
+        std::cout<<"repeat search: "<<start.id()<<"-->"<<target.id()<<std::endl;
+    
+    
+    
+    start.set_check(true);
     //std::cout<<"node: "<<start.id()<<std::endl;
     
     int start_node_id=start.id();
+    
     
     //root node:
     if(start.depth()==0){

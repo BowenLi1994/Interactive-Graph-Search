@@ -1,19 +1,23 @@
-/// \file parser/bracket_notation_parser_impl.h
-///
-/// \details
-/// Contains the implementation of the BracketNotationParser class.
+//
+//  analyzer_imp.h
+//  analyzer
+//
+//  Created by Bowen Li on 4/7/20.
+//  Copyright © 2020 Bowen Li. All rights reserved.
+//
 
-#pragma once
+#ifndef analyzer_imp_h
+#define analyzer_imp_h
 
 /// This is currently a copy of the previous version but with the efficient
 /// tokanization.
-node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
+node::Node<Analyzer::Label> Analyzer::parse_single(
     const std::string& tree_string) {
 
-    
-  int id_counter=0;
-  int depth_counter=0;
-    
+  int id=1;
+  int depth_couter=0;
+    int total_depth=0;
+    int max_depth=0;
   std::vector<std::string> tokens = get_tokens(tree_string);
 
   // Tokenize the input string - get iterator over tokens.
@@ -30,22 +34,16 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
     ++tokens_begin; // Advance tokens.
   }
   Label root_label(match_str);
-  node::Node<Label> root(root_label);
+  node::Node<Label> root(root_label,id,depth_couter);
   node_stack.push_back(std::ref(root));
-    root.set_id(id_counter);
-    root.set_depth(depth_counter);
-    id_counter++;
-    depth_counter++;
-
-  //std::string last_string="null";
+  id++;
+  depth_couter++;
+    total_depth+=depth_couter;
+    if(depth_couter>max_depth)
+        max_depth=depth_couter;
   // Iterate all remaining tokens.
   while (tokens_begin != tokens_end) {
-    
     match_str = *tokens_begin;
-          
-   if(match_str!=kLeftBracket && match_str!=kRightBracket)
-       break;
-       
 
     if (match_str == kLeftBracket) { // Enter node.
       ++tokens_begin; // Advance tokens to label.
@@ -59,33 +57,34 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
       }
 
       // Create new node.
+    total_depth+=depth_couter;
+    if(depth_couter>max_depth)
+        max_depth=depth_couter;
       Label node_label(match_str);
-      node::Node<Label> n(node_label);
-        n.set_id(id_counter);
-        n.set_depth(depth_counter);
-        id_counter++;
-        depth_counter++;
-        //n.set_sibling((int)node_stack.back().get().children_count());
-
-      // Move n to become a child.
-      // Return reference from add_child to the 'new-located' object.
-      // Put a reference to just-moved n (last child of its parent) on a stack.
+      node::Node<Label> n(node_label,id,depth_couter);
+      id++;
+      depth_couter++;
+      //n.add_parent(node_stack.back().get()) ;
+    
       node_stack.push_back(std::ref(node_stack.back().get().add_child(n)));
     }
 
     if (match_str == kRightBracket) { // Exit node.
       node_stack.pop_back();
       ++tokens_begin; // Advance tokens.
-      depth_counter--;
+      depth_couter--;
     }
   }
-    
-  root.pre_prosseing();
+    root.setTree_size(id-1);
+    //total_depth-=depth_couter;
+    int avg_depth=total_depth/(id-1);
+    root.setAvg_depth(avg_depth);
+    root.setMax_depth(max_depth);
   return root;
 }
-
-void BracketNotationParser::parse_collection(
-    std::vector<node::Node<BracketNotationParser::Label>>& trees_collection,
+//
+void Analyzer::parse_collection(
+    std::vector<node::Node<Analyzer::Label>>& trees_collection,
     const std::string& file_path) {
   std::ifstream trees_file(file_path);
   if (!trees_file) {
@@ -100,7 +99,7 @@ void BracketNotationParser::parse_collection(
 }
 
 /// This is only a tokanizer that returns a vector with correct tokens.
-std::vector<std::string> BracketNotationParser::get_tokens(
+std::vector<std::string> Analyzer::get_tokens(
     const std::string& tree_string) {
   std::vector<std::string> tokens;
 
@@ -135,7 +134,7 @@ std::vector<std::string> BracketNotationParser::get_tokens(
   return tokens;
 }
 
-bool BracketNotationParser::validate_input(const std::string& tree_string) const {
+bool Analyzer::validate_input(const std::string& tree_string) const {
   int bracket_diff_counter = 0; // Counts difference between the numbers of left and right brackets.
   int bracket_pair_counter = 0; // Counts number of bracket pairs - number of nodes assuming correct nesting.
   // Loop over all characters.
@@ -154,3 +153,38 @@ bool BracketNotationParser::validate_input(const std::string& tree_string) const
   }
   return true;
 }
+
+void Analyzer::analyze_trees(const std::vector<Analyzer::Node>& trees_collection){
+    
+    std::cout<<"******Analyzing :******"<<std::endl;
+    std::cout<<"Trees number: "<<trees_collection.size()<<std::endl;
+    int total_avg_depth=0;
+    int max_depth=0;
+    int total_tree_size=0;
+    int max_tree_size=0;
+    
+    for(const auto& root: trees_collection){
+        
+        total_tree_size+=root.getTree_size();
+        if(root.getTree_size()>max_tree_size)
+            max_tree_size=root.getTree_size();
+        total_avg_depth+=root.getAvg_depth();
+        if(root.getMax_depth()>max_depth)
+            max_depth=root.getMax_depth();
+        
+    }
+    
+    double avg_tree_size=(double)total_tree_size/(double) trees_collection.size();
+    
+    double avg_depth=(double)total_avg_depth/(double) trees_collection.size();
+    
+    std::cout<<"Max size of tree: "<<max_tree_size<<std::endl;
+    std::cout<<"Average size of tree: "<<avg_tree_size<<std::endl;
+    std::cout<<"Max depth of tree: "<<max_depth<<std::endl;
+    std::cout<<"Average depth of tree: "<<avg_depth<<std::endl;
+    
+}
+
+
+
+#endif /* analyzer_imp_h */

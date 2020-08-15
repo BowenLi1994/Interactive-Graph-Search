@@ -12,7 +12,7 @@
 #include "../../tree/node/node.h"
 #include "../../tree/label/string_label.h"
 #include "../../others/reachability.h"
-#include "supernode.h"
+#include "../../path-tree/super_node/supernode.h"
 
 namespace path_tree_generator {
 

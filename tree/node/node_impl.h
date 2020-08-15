@@ -6,7 +6,7 @@
 #pragma once
 
 template<class Label>
-Node<Label>::Node(ConstReference label) : label_(label),depth_(0),sibling_number_(1),nex_right_sibling_(-1) {}
+Node<Label>::Node(ConstReference label) : label_(label),depth_(0),sibling_number_(1),nex_right_sibling_(-1),checked_(false) {}
 
 template<class Label>
 const typename Node<Label>::SizeType Node<Label>::children_count() const {
@@ -164,3 +164,20 @@ void Node<Label>::pre_prosseing(){
 }
 
 
+template<class Label>
+const bool Node<Label>::is_checked(){
+    return checked_;
+}
+
+template<class Label>
+void Node<Label>::set_check(bool flag){
+    checked_=flag;
+}
+
+template<class Label>
+void Node<Label>::reset_checked(){
+    this->set_check(false);
+    for(auto& child : this->get_children()){
+        child.reset_checked();
+    }
+}

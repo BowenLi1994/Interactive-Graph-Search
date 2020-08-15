@@ -80,6 +80,11 @@ public:
     void print_all_label();
     void pre_prosseing();
     
+    const bool is_checked();
+    void set_check(bool flag);
+    
+    void reset_checked();
+    
     
 // Member variables
 private:
@@ -95,6 +100,7 @@ private:
   int nex_right_sibling_;
   int id_;
   int depth_;
+  bool checked_;
 };
 
 // Implementation details

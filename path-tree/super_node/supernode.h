@@ -44,6 +44,8 @@ public:
     
     void print_heay_tree();
     
+    bool is_contained(int id);
+    
     
     private:
     int id_;

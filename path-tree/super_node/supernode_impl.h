@@ -84,3 +84,17 @@ void Supernode::print_heay_tree(){
 void Supernode::set_id(int id){
     id_=id;
 }
+
+bool Supernode::is_contained(int id){
+    
+    bool flag=false;
+    
+    for(auto& node:this->getNodes()){
+        if(node->id()==id){
+            flag=true;
+            break;
+        }
+    }
+        
+    return flag;
+}
