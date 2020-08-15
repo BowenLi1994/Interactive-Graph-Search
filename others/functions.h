@@ -53,7 +53,7 @@ void ReadFile(const std::string filepath, std::vector<std::string> &lines){
 
 std::map<std::string,std::string> Dataset_path(){
     std::map<std::string,std::string> dataset_map;
-    std::string filepath="/Users/brandonli/Desktop/Interactive Graph Search/others/dataset.map";
+    std::string filepath="/home/bowen/Interactive-Graph-Search/others/dataset.map";
     std::vector<std::string> lines;
     ReadFile(filepath,lines);
     for(auto line:lines){
