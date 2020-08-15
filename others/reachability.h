@@ -28,10 +28,10 @@ bool Reachability(Node& start,Node& target,int & step){
     
     if(!start.is_checked()){
         step++;
-        std::cout<<"search: "<<start.id()<<"-->"<<target.id()<<std::endl;
+        //std::cout<<"search: "<<start.id()<<"-->"<<target.id()<<std::endl;
     }
     else
-        std::cout<<"repeat search: "<<start.id()<<"-->"<<target.id()<<std::endl;
+        //std::cout<<"repeat search: "<<start.id()<<"-->"<<target.id()<<std::endl;
     
     
     

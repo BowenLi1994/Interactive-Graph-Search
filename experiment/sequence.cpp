@@ -6,15 +6,15 @@
 #include <vector>
 
 
-#include "../../Interactive Graph Search/tree/tree.h"
-#include "../../Interactive Graph Search/baseline/baseline.h"
-#include "../../Interactive Graph Search/others/reachability.h"
-#include "../../Interactive Graph Search/path-tree/super_node/supernode.h"
-#include "../../Interactive Graph Search/path-tree/generator/path_tree_generator.h"
-#include "../../Interactive Graph Search/binary-search/binary_supernode.h"
-#include "../../Interactive Graph Search/interleave/interleave_ordered.h"
-#include "../../Interactive Graph Search/adaptive/adaptive.h"
-#include "../../Interactive Graph Search/others/functions.h"
+#include "../tree/tree.h"
+#include "../baseline/baseline.h"
+#include "../others/reachability.h"
+#include "../path-tree/super_node/supernode.h"
+#include "../path-tree/generator/path_tree_generator.h"
+#include "../binary-search/binary_supernode.h"
+#include "../interleave/interleave_ordered.h"
+#include "../adaptive/adaptive.h"
+#include "../others/functions.h"
 
 
 using Label=label::StringLabel;
@@ -34,10 +34,11 @@ int main(int argc, const char * argv[]) {
     filepath=functions::getFilePath(filename);
     if(filename=="null")
         return 0;
-    
+   
+    std::cout<<filepath<<std::endl;
     std::vector<Node> trees_collection;
     parser::BracketNotationParser bnp;
-    //bnp.parse_collection(trees_collection,filepath);
+    bnp.parse_collection(trees_collection,filepath);
     
     std::vector<Supernode *> supernodes_collection;
     path_tree_generator::heavy_path_trees_collection_generator(trees_collection, supernodes_collection);
@@ -60,7 +61,32 @@ int main(int argc, const char * argv[]) {
                 baseline::Topdown(trees_collection[i], target_node, found, steps);
                
             }
+            if(method=="ordered"){
+                interleave::ordered(trees_collection[i],supernodes_collection[i],target_node,found,steps);
+            }
+
+            if(method=="outdegree"){
+                std::string sThre(argv[3]);
+                int threshold=std::stoi(sThre);
+                trees_collection[i].reset_checked();
+                adaptive::outdegree(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
+            }
+
             
+            if(method=="sibling"){
+                std::string sThre(argv[3]);
+                int threshold=std::stoi(sThre);
+                trees_collection[i].reset_checked();
+                adaptive::sibling(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
+            }
+
+            if(method=="comprehensive"){
+                std::string sThre(argv[3]);
+                int threshold=std::stoi(sThre);
+                trees_collection[i].reset_checked();
+                adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
+            }
+
             total_steps+=steps;
             std::map<int, std::pair<int, int>>::iterator it;
             it=tree_depth_step.find(target_node.depth());
