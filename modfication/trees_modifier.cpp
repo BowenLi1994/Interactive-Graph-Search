@@ -5,37 +5,35 @@
 #include "subset.h"
 #include "combine.h"
 #include "../others/functions.h"
-
+#include "../tree/tree.h"
 
 int main(int argc, const char * argv[]) {
     
     
-    //std::string file_path=functions::getFilePath("All");
-    //std::cout<<"filepath: "<<file_path<<std::endl;
+    using Label=label::StringLabel;
+    using Node=node::Node<Label>;
+
+    if(argc!=4){
+        std::cout<<"Wrong argument!"<<std::endl;
+        return 0;
+    }
     
-    combine("hello", 100);
-
-    //std::string method_name(argv[1]);
-
-
-//   if(method_name=="subset"){
-//
-//        std::string filename(argv[2]);
-//        int trees_number=atoi(argv[3]);
-//        subset(filename,trees_number);
-//
-//
-//
-//    }
-//
-//   else if(method_name=="combine"){
-//
-//       std::string filename(argv[2]);
-//       int trees_number=atoi(argv[3]);
-//
-//       combine(filename,trees_number);
-//   }
-
+    std::string method(argv[1]);
+    std::string filename(argv[2]);
+    std::string tree_value(argv[3]);
+    int trees_number=std::stoi(tree_value);
+    
+    //std::string filepath=functions::getFilePath(filename);
+    
+ 
+    
+    if(method=="combine"){
+        combine(filename, trees_number);
+    }
+    
+    
+    
+    
 
 
     return 0;
