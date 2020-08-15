@@ -85,6 +85,12 @@ public:
     
     void reset_checked();
     
+    void add_leaf(Node<Label>* child);
+    std::vector<Node<Label>*>& get_leaf();
+    
+    
+    
+    
     
 // Member variables
 private:
@@ -92,6 +98,7 @@ private:
   
   /// All children of this node.
   std::vector<Node<Label>> children_;
+  std::vector<Node<Label>* > leaf_;
 
   /// Data representing the label of this node. Only this Node object owns it.
   Label label_;

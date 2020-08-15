@@ -8,14 +8,12 @@
 #include <map>
 #include <random>
 
-#include "../tree/node/node.h"
-#include "../tree/label/string_label.h"
-#include "../tree/parser/bracket_notation_parser.h"
+#include "../tree/tree.h"
+#include "../modfication/tree_string.h"
 
 using Label=label::StringLabel;
 using Node=node::Node<Label>;
 
-void tree_string(Node &root,std::string& tree_string);
 int combine(std::string filename, int trees_number);
 
 
@@ -51,7 +49,7 @@ int  combine(std::string filename, int trees_number) {
         Label target_label("root");
         Node root(target_label);
         for(int j=0;j<tree_size;j++){
-            int trees_pos=rand()%10000;
+            int trees_pos=rand()%(int)trees_collection.size();
             root.add_child(trees_collection[trees_pos]);
         }
         std::string temp;
@@ -67,16 +65,4 @@ int  combine(std::string filename, int trees_number) {
     return 0;
 }
 
-void tree_string(Node &root,std::string& temp){
-    
-    //std::cout<<"{";
-    temp+="{";
-    //std::cout<<root.label().to_string();
-    temp+=root.label().to_string();
-    for(auto& child: root.get_children()){
-        tree_string(child,temp);
-    }
-    //std::cout<<"}";
-     temp+="}";
-}
 

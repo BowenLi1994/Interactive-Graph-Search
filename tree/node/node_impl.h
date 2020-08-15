@@ -181,3 +181,13 @@ void Node<Label>::reset_checked(){
         child.reset_checked();
     }
 }
+
+template<class Label>
+void Node<Label>::add_leaf(Node<Label> *child){
+    leaf_.push_back(child);
+}
+
+template<class Label>
+std::vector<Node<Label>*>& Node<Label>::get_leaf(){
+    return leaf_;
+}
