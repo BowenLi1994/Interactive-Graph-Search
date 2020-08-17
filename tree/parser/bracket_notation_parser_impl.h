@@ -70,6 +70,7 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
       // Move n to become a child.
       // Return reference from add_child to the 'new-located' object.
       // Put a reference to just-moved n (last child of its parent) on a stack.
+    
       node_stack.push_back(std::ref(node_stack.back().get().add_child(n)));
     }
 

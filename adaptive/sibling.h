@@ -26,7 +26,7 @@ void sibling(Node& root,Node& target,Supernode * sroot, bool& found, int& steps,
 
 void sibling(Node& root,Node& target,Supernode * sroot, bool& found, int& steps,int threshold){
     
-    std::cout<<"-------->sibling search: "<<std::endl;
+    //std::cout<<"-------->sibling search: "<<std::endl;
     
      int sibling_threshold=threshold;
      int out_degree=(int)root.children_count();
