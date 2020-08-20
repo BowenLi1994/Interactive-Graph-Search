@@ -1,6 +1,5 @@
-#ifndef BFUNCTION_H
-#define BFUNCTION_H
 
+#pragma once
 #include <string>
 #include <fstream>
 #include <map>
@@ -14,6 +13,8 @@ std::map<std::string,std::string> Dataset_path();
 void SplitString(const std::string& s, std::vector<std::string>& v, const std::string& c);
 
 void ReadFile(const std::string filepath, std::vector<std::string> &lines);
+
+void WriteFile(const std::string filepath, std::vector<std::string> &lines);
 
 std::string getFilePath(std::string filename);
 
@@ -87,6 +88,35 @@ std::string getFilePath(std::string filename){
     
 }
 
+void WriteFile(const std::string filepath, std::vector<std::string> &lines){
+    
+    std::ofstream outfile(filepath);
+    
+    if(outfile.is_open()){
+        
+        for(auto line:lines){
+            outfile<<line<<"\n";
+        }
+        
+        
+    }
+    else{
+         std::cout<<filepath<<" cannot be open"<<std::endl;
+    }
+    
+    
+
+//       if(infile.is_open()){
+//           while (std::getline(infile, line)){
+//               lines.push_back(line);
+//           }
+//       }
+//       else
+//
+    
+    
+}
+
 
 
 
@@ -96,4 +126,4 @@ std::string getFilePath(std::string filename){
 
 
 
-#endif
+

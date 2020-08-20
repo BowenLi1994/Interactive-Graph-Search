@@ -7,13 +7,13 @@
 
 /// This is currently a copy of the previous version but with the efficient
 /// tokanization.
-node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
+PathTreeParser::Supernode PathTreeParser::parse_single(
     const std::string& tree_string) {
 
-    
+
   int id_counter=0;
-  int depth_counter=0;
-    
+//  int depth_counter=0;
+
   std::vector<std::string> tokens = get_tokens(tree_string);
 
   // Tokenize the input string - get iterator over tokens.
@@ -29,23 +29,36 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
   } else { // Non-empty label.
     ++tokens_begin; // Advance tokens.
   }
-  Label root_label(match_str);
-  node::Node<Label> root(root_label);
-  node_stack.push_back(std::ref(root));
-    root.set_id(id_counter);
-    root.set_depth(depth_counter);
-    id_counter++;
-    depth_counter++;
-
-  //std::string last_string="null";
-  // Iterate all remaining tokens.
-  while (tokens_begin != tokens_end) {
+    //std::cout<<match_str<<std::endl;
+    Supernode sroot;
+    sroot.set_id(id_counter);
+    std::vector<std::pair<int, int>> ids_pair=get_ids(match_str);
     
+    for(auto pair: ids_pair){
+        
+        //std::cout<<"node: "<<pair.first<<" right: "<<pair.second<<std::endl;
+        Label node_label("path-tree");
+        Node* node=new Node(node_label);
+//        Node node(node_label);
+        node->set_id(pair.first);
+        node->set_right_sibling(pair.second);
+//        std::cout<<"node: "<<node.id()<<" right: "<<node.right_sibling()<<std::endl;
+        sroot.add_node(node);
+//          sroot.print_all_nodes();
+        
+    }
+  
+    node_stack.push_back(&sroot);
+    id_counter++;
+
+  //Iterate all remaining tokens.
+  while (tokens_begin != tokens_end) {
+
     match_str = *tokens_begin;
-          
+
    if(match_str!=kLeftBracket && match_str!=kRightBracket)
        break;
-       
+
 
     if (match_str == kLeftBracket) { // Enter node.
       ++tokens_begin; // Advance tokens to label.
@@ -59,35 +72,41 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
       }
 
       // Create new node.
-      Label node_label(match_str);
-      node::Node<Label> n(node_label);
-        n.set_id(id_counter);
-        n.set_depth(depth_counter);
-        id_counter++;
-        depth_counter++;
-        //n.set_sibling((int)node_stack.back().get().children_count());
+      Supernode*  snode=new Supernode;
+      snode->set_id(id_counter);
+      id_counter++;
+      std::vector<std::pair<int, int>> ids_pair=get_ids(match_str);
 
-      // Move n to become a child.
-      // Return reference from add_child to the 'new-located' object.
-      // Put a reference to just-moved n (last child of its parent) on a stack.
-    
-      node_stack.push_back(std::ref(node_stack.back().get().add_child(n)));
+        for(auto pair: ids_pair){
+
+            //std::cout<<"node: "<<pair.first<<" right: "<<pair.second<<std::endl;
+            Label node_label("path-tree");
+            Node* node=new Node(node_label);
+            
+            node->set_id(pair.first);
+            node->set_right_sibling(pair.second);
+            snode->add_node(node);
+        }
+
+        node_stack.back()->add_child(snode);
+        node_stack.push_back(snode);
+
     }
 
     if (match_str == kRightBracket) { // Exit node.
       node_stack.pop_back();
       ++tokens_begin; // Advance tokens.
-      depth_counter--;
     }
   }
+
+
+   
     
-  root.pre_prosseing();
-  return root;
+    return sroot;
 }
 
-void BracketNotationParser::parse_collection(
-    std::vector<node::Node<BracketNotationParser::Label>>& trees_collection,
-    const std::string& file_path) {
+void PathTreeParser::parse_collection(std::vector<Supernode*> &trees_collection, const std::string &file_path) {
+    
   std::ifstream trees_file(file_path);
   if (!trees_file) {
     throw std::runtime_error("ERROR: Problem with opening the file '" + file_path + "' in BracketNotationParser::parse_collection_efficient.");
@@ -96,15 +115,23 @@ void BracketNotationParser::parse_collection(
   int tree_counter=0;
   std::string tree_string;
   while (std::getline(trees_file, tree_string)) {
-      std::cout<<"tree "<<tree_counter<<" "<<std::endl;
-    trees_collection.push_back(parse_single(tree_string)); // -> This invokes a move constructor (due to push_back(<rvalue>)).
+    std::cout<<"tree "<<tree_counter<<" "<<std::endl;
+    Supernode* node=new Supernode;
+    *node=parse_single(tree_string);
+//    Supernode node=parse_single(tree_string);
+//    node.print_heay_tree();
+////    Supernode* sroot=new Supernode;
+////    sroot=&node;
+//
+    trees_collection.push_back(node); // -> This invokes a move constructor (due to push_back(<rvalue>)).
     tree_counter++;
   }
   trees_file.close();
 }
 
-/// This is only a tokanizer that returns a vector with correct tokens.
-std::vector<std::string> BracketNotationParser::get_tokens(
+
+// This is only a tokanizer that returns a vector with correct tokens.
+std::vector<std::string> PathTreeParser::get_tokens(
     const std::string& tree_string) {
   std::vector<std::string> tokens;
 
@@ -139,7 +166,7 @@ std::vector<std::string> BracketNotationParser::get_tokens(
   return tokens;
 }
 
-bool BracketNotationParser::validate_input(const std::string& tree_string) const {
+bool PathTreeParser::validate_input(const std::string& tree_string) const {
   int bracket_diff_counter = 0; // Counts difference between the numbers of left and right brackets.
   int bracket_pair_counter = 0; // Counts number of bracket pairs - number of nodes assuming correct nesting.
   // Loop over all characters.
@@ -158,3 +185,28 @@ bool BracketNotationParser::validate_input(const std::string& tree_string) const
   }
   return true;
 }
+
+
+ std::vector<std::pair<int, int>> PathTreeParser::get_ids(const std::string &node_string){
+     
+     std::vector<std::pair<int, int>> ids_set;
+     std::vector<std::string> nodes_set;
+     
+     functions::SplitString(node_string, nodes_set, "/");
+     
+     for(auto nodes: nodes_set){
+         std::vector<std::string> ids_nexsibling;
+         functions::SplitString(nodes, ids_nexsibling, ",");
+         ids_set.push_back(std::make_pair(std::stoi(ids_nexsibling[0]), std::stoi(ids_nexsibling[1])));
+     }
+     
+     
+     
+//     for(auto pair:ids_set){
+//         //std::cout<<"node id:"<<pair.first<<" right id: "<<pair.second<<std::endl;
+//     }
+     
+     
+     
+     return ids_set;
+ }
