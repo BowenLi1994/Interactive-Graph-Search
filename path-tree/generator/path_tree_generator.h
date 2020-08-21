@@ -162,7 +162,7 @@ void heavy_path_trees_collection_generator(std::vector<Node>& trees_collection, 
     int tree_number=(int)trees_collection.size();
     for(int i=0;i<tree_number;i++){
 
-        std::cout<<"tree "<<i<<std::endl;
+        std::cout<<"generate path-tree: "<<i<<std::endl;
         std::vector<Supernode *> tree_paths;
         single_path_tree_generator(trees_collection[i], tree_paths);
 
