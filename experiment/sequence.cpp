@@ -15,7 +15,7 @@
 #include "../interleave/interleave_ordered.h"
 #include "../adaptive/adaptive.h"
 #include "../others/functions.h"
-
+#include "../path-tree/parser/path_tree_parser.h"
 
 using Label=label::StringLabel;
 using Node=node::Node<Label>;
@@ -41,7 +41,12 @@ int main(int argc, const char * argv[]) {
     bnp.parse_collection(trees_collection,filepath);
     
     std::vector<Supernode *> supernodes_collection;
-    path_tree_generator::heavy_path_trees_collection_generator(trees_collection, supernodes_collection);
+    std::string ptree_path="/home/bowen/igs_dataset/path-tree/";
+    std::string ptree_name=filename+".ptree";
+    parser::PathTreeParser ptp;
+    ptp.parse_collection(supernodes_collection,ptree_path+ptree_name);
+
+    //path_tree_generator::heavy_path_trees_collection_generator(trees_collection, supernodes_collection);
     
     int trees_number=(int)trees_collection.size();
     std::map<int, std::pair<int, int>> total_depth_step;
