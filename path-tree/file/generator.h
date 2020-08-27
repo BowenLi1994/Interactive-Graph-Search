@@ -1,13 +1,6 @@
-//
-//  path_tree_generator.h
-//  tree_interleave
-//
-//  Created by Bowen Li on 3/4/20.
-//  Copyright © 2020 Bowen Li. All rights reserved.
-//
-
 #pragma once
 
+#include"../path-tree.h"
 
 namespace path_tree_file {
 
@@ -46,7 +39,7 @@ void generator(std::vector<Supernode *>& supernodes_collection,std::vector<std::
 std::string nodes_combine(Supernode* snode){
     std::string combined_node;
     for(auto node: snode->getNodes())
-        combined_node=combined_node+std::to_string(node->id())+","+std::to_string(node->right_sibling())+"/";
+        combined_node=combined_node+std::to_string(node->id())+"-";
     
     combined_node.erase(combined_node.end()-1);
     return combined_node;
