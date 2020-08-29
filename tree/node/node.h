@@ -99,6 +99,7 @@ private:
   /// All children of this node.
   std::vector<Node<Label>> children_;
   std::vector<Node<Label>* > leaf_;
+  std::vector<Node<Label>> all_nodes_;
 
   /// Data representing the label of this node. Only this Node object owns it.
   Label label_;

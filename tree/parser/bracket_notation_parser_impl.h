@@ -1,9 +1,7 @@
-/// \file parser/bracket_notation_parser_impl.h
-///
-/// \details
-/// Contains the implementation of the BracketNotationParser class.
+
 
 #pragma once
+using namespace parser;
 
 /// This is currently a copy of the previous version but with the efficient
 /// tokanization.

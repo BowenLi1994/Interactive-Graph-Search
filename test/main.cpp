@@ -9,9 +9,7 @@
 #include "../path-tree/path-tree.h"
 
 
-using Label=label::StringLabel;
-using Node=node::Node<Label>;
-using Supernode=supernode::Supernode;
+
 
 
 int main(int argc, const char * argv[]) {
@@ -22,6 +20,9 @@ int main(int argc, const char * argv[]) {
     //std::string tree_string="{0{1{2{3{4{5}}}}}{6}{7}{8}}";
     //std::string tree_string="{1{2{3{4{5}{6}}{7}{8}{9}}{10{11{12{13}}{14}}}{15}{16}}";
     
+    using Label=label::StringLabel;
+    using Node=node::Node<Label>;
+    using Supernode=supernode::Supernode;
     
     
     std::string tree_path="../dataset/singel_case1.tree";

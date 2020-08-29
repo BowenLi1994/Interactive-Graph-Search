@@ -5,7 +5,11 @@
 
 #pragma once
 
-StringLabel::StringLabel(){}
+using namespace label;
+
+StringLabel::StringLabel(){
+  label_="null";
+}
 
 StringLabel::StringLabel(const std::string& label) : label_(label) {}
 

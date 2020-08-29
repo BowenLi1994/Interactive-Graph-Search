@@ -1,12 +1,16 @@
-/// \file node/node_impl.h
-///
-/// \details
-/// Contains the implementation of the Node class.
 
 #pragma once
+using namespace node;
 
 template<class Label>
-Node<Label>::Node(ConstReference label) : label_(label),depth_(0),sibling_number_(1),nex_right_sibling_(-1),checked_(false) {}
+Node<Label>::Node(ConstReference label){
+    label_=label;
+    depth_=0;
+    sibling_number_=1;
+    nex_right_sibling_=-1;
+    checked_=false;
+
+} 
 
 template<class Label>
 const typename Node<Label>::SizeType Node<Label>::children_count() const {
