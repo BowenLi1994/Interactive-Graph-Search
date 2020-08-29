@@ -44,7 +44,7 @@ int main(int argc, const char * argv[]) {
     std::string ptree_path="/home/bowen/igs_dataset/path-tree/";
     std::string ptree_name=filename+".ptree";
     parser::PathTreeParser ptp;
-    ptp.parse_collection(supernodes_collection,ptree_path+ptree_name);
+    ptp.parse_collection(supernodes_collection,trees_collection,ptree_path+ptree_name);
 
     //path_tree_generator::heavy_path_trees_collection_generator(trees_collection, supernodes_collection);
     
