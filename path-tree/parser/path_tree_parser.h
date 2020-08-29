@@ -23,7 +23,7 @@ public:
 public:
     
     
-  Supernode parse_single(const std::string& tree_string);
+  Supernode parse_single(const std::string& tree_string,std::vector<Node>& nodes_set);
 
     
   void parse_collection(std::vector<Supernode*>& trees_collection,
@@ -33,7 +33,7 @@ public:
   std::vector<std::string> get_tokens(const std::string& tree_string);
 
   bool validate_input(const std::string& tree_string) const;
-  std::vector<std::pair<int, int>> get_ids(const std::string& node_string);
+  std::vector<int> get_ids(const std::string& node_string);
     
 // Member variables
 private:

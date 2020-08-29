@@ -88,6 +88,8 @@ public:
     void add_leaf(Node<Label>* child);
     std::vector<Node<Label>*>& get_leaf();
     
+    std::vector<Node<Label>>& get_all_nodes();
+    void add_node(Node<Label> node);
     
     
     

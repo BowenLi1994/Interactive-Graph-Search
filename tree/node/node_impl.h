@@ -195,3 +195,18 @@ template<class Label>
 std::vector<Node<Label>*>& Node<Label>::get_leaf(){
     return leaf_;
 }
+
+template<class Label>
+std::vector<Node<Label>>& Node<Label>::get_all_nodes(){
+    
+    return all_nodes_;
+}
+
+template<class Label>
+void Node<Label>::add_node(Node<Label> node){
+
+    all_nodes_.push_back(node);
+}
+
+
+

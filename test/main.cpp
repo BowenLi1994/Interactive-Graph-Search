@@ -30,25 +30,30 @@ int main(int argc, const char * argv[]) {
     std::vector<Node> trees_collection;
     parser::BracketNotationParser bnp;
     bnp.parse_collection(trees_collection, tree_path);
+
+    // for(auto node: trees_collection[0].get_all_nodes()){
+    //     std::cout<<"node: "<<node.id()<<std::endl;
+    // }
     
     
+    //cout<<"";
 
    //trees_collection[0].print_all_label();
     
 
    
     
-   std::vector<Supernode*> supernodes_collection;
-   path_tree_generator::heavy_path_trees_collection_generator(trees_collection, supernodes_collection);
-//
-   std::string path_string;
-   path_tree_file::singel_generator(supernodes_collection[0], path_string);
+//    std::vector<Supernode*> supernodes_collection;
+//    path_tree_generator::heavy_path_trees_collection_generator(trees_collection, supernodes_collection);
+// //
+//    std::string path_string;
+//    path_tree_file::singel_generator(supernodes_collection[0], path_string);
 
-   std::cout<<"path: "<<path_string<<std::endl;
+//    std::cout<<"path: "<<path_string<<std::endl;
     
-//     std::string path_tree="{0-1-3-6-7{2}{4}{5}{8}{9-10-11-12{13}}}";
+    std::string path_tree="{0-1-3-6-7{2}{4}{5}{8}{9-10-11-12{13}}}";
 // ////
-//     parser::PathTreeParser ptp;
+    parser::PathTreeParser ptp;
 //    for(int i=0;i<(int)trees_collection[0].get_all_nodes().size();i++)
 //        std::cout<<"nodes: "<<trees_collection[0].get_all_nodes()[i]->id()<<std::endl;
 //
@@ -59,8 +64,7 @@ int main(int argc, const char * argv[]) {
     // }
     // std::cout<<"node: "<<trees_collection[0].get_all_nodes()[0]->id()<<" depth: "<<trees_collection[0].get_all_nodes()[0]->depth()<<std::endl;
     
-    // Supernode sroot=ptp.parse_single(path_tree,trees_collection[0].get_all_nodes());
-    //sroot.print_heay_tree();
+    Supernode sroot=ptp.parse_single(path_tree,trees_collection[0].get_all_nodes());
 //
 
     
