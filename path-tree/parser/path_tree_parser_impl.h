@@ -93,7 +93,8 @@ PathTreeParser::Supernode PathTreeParser::parse_single(
     return sroot;
 }
 
-void PathTreeParser::parse_collection(std::vector<Supernode*> &trees_collection, const std::string &file_path) {
+void PathTreeParser::parse_collection(std::vector<Supernode*>& path_trees_collection,std::vector<Node>& trees_collection,
+      const std::string& file_path) {
     
   std::ifstream trees_file(file_path);
   if (!trees_file) {
@@ -102,19 +103,19 @@ void PathTreeParser::parse_collection(std::vector<Supernode*> &trees_collection,
   // Read the trees line by line, parse, and move into the container.
   int tree_counter=0;
   std::string tree_string;
-//   while (std::getline(trees_file, tree_string)) {
-//     std::cout<<"tree "<<tree_counter<<" "<<std::endl;
-//     Supernode* node=new Supernode;
-//     *node=parse_single(tree_string);
-// //    Supernode node=parse_single(tree_string);
-// //    node.print_heay_tree();
-// ////    Supernode* sroot=new Supernode;
-// ////    sroot=&node;
-// //
-//     trees_collection.push_back(node); // -> This invokes a move constructor (due to push_back(<rvalue>)).
-//     tree_counter++;
-  // }
-  // trees_file.close();
+  while (std::getline(trees_file, tree_string)) {
+    std::cout<<"parse path-tree "<<tree_counter<<":"<<std::endl;
+    Supernode* node=new Supernode;
+    *node=parse_single(tree_string,trees_collection[tree_counter].get_all_nodes());
+//    Supernode node=parse_single(tree_string);
+//    node.print_heay_tree();
+////    Supernode* sroot=new Supernode;
+////    sroot=&node;
+//
+    path_trees_collection.push_back(node); // -> This invokes a move constructor (due to push_back(<rvalue>)).
+    tree_counter++;
+  }
+   trees_file.close();
 }
 
 

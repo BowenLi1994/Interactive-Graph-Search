@@ -26,7 +26,7 @@ public:
   Supernode parse_single(const std::string& tree_string,std::vector<Node>& nodes_set);
 
     
-  void parse_collection(std::vector<Supernode*>& trees_collection,
+  void parse_collection(std::vector<Supernode*>& path_trees_collection,std::vector<Node>& trees_collection,
       const std::string& file_path);
 
     

@@ -8,12 +8,9 @@
 
 
 #include "../../tree/tree.h"
-#include "../../path-tree/super_node/supernode.h"
-#include "../../path-tree/generator/path_tree_generator.h"
+#include "../../path-tree/path-tree.h"
 #include "../../others/functions.h"
-#include "./generator.h"
-#include "../../others/functions.h"
-#include "../../path-tree/parser/path_tree_parser.h"
+
 
 
 using Label=label::StringLabel;
