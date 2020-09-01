@@ -88,8 +88,8 @@ public:
     void add_leaf(Node<Label>* child);
     std::vector<Node<Label>*>& get_leaf();
     
-    std::vector<Node<Label>>& get_all_nodes();
-    void add_node(Node<Label> node);
+    std::vector<Node<Label>*>& get_all_nodes();
+    void add_node(Node<Label>* node);
     
     
     
@@ -101,7 +101,7 @@ private:
   /// All children of this node.
   std::vector<Node<Label>> children_;
   std::vector<Node<Label>* > leaf_;
-  std::vector<Node<Label>> all_nodes_;
+  std::vector<Node<Label>* > all_nodes_;
 
   /// Data representing the label of this node. Only this Node object owns it.
   Label label_;

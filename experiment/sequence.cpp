@@ -7,15 +7,11 @@
 
 
 #include "../tree/tree.h"
-#include "../baseline/baseline.h"
-#include "../others/reachability.h"
-#include "../path-tree/super_node/supernode.h"
-#include "../path-tree/generator/path_tree_generator.h"
+#include "../others/others.h"
+#include "../path-tree/path-tree.h"
 #include "../binary-search/binary_supernode.h"
-#include "../interleave/interleave_ordered.h"
-#include "../adaptive/adaptive.h"
-#include "../others/functions.h"
-#include "../path-tree/parser/path_tree_parser.h"
+#include "experiment.h"
+
 
 using Label=label::StringLabel;
 using Node=node::Node<Label>;

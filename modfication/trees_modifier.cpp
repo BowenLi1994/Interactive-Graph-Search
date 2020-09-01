@@ -11,8 +11,8 @@
 int main(int argc, const char * argv[]) {
     
     
-    using Label=label::StringLabel;
-    using Node=node::Node<Label>;
+    //using Label=label::StringLabel;
+    //using Node=node::Node<Label>;
 
     if(argc!=4){
         std::cout<<"Wrong argument!"<<std::endl;
@@ -35,6 +35,12 @@ int main(int argc, const char * argv[]) {
     if(method=="concatnate"){
         concatnate(filename, trees_number);
     }
+
+    else
+    {
+        std::cout<<"wrong methods"<<std::endl;
+    }
+    
     
 
     

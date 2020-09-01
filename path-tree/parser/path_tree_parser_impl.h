@@ -8,7 +8,7 @@ using namespace parser;
 /// This is currently a copy of the previous version but with the efficient
 /// tokanization.
 PathTreeParser::Supernode PathTreeParser::parse_single(
-    const std::string& tree_string,std::vector<Node>& nodes_set) {
+    const std::string& tree_string,std::vector<Node *>& nodes_set) {
 
 
     // for(auto node: nodes_set){
@@ -38,7 +38,7 @@ PathTreeParser::Supernode PathTreeParser::parse_single(
     std::vector<int> ids_set=get_ids(match_str);
     
     for(auto id: ids_set)
-        sroot.add_node(&nodes_set[id]);
+        sroot.add_node(nodes_set[id]);
 
     //sroot.print_all_nodes();
   
@@ -73,7 +73,7 @@ PathTreeParser::Supernode PathTreeParser::parse_single(
 
         for(auto id: ids_set){
 
-            snode->add_node(&nodes_set[id]);
+            snode->add_node(nodes_set[id]);
         }
 
         node_stack.back()->add_child(snode);

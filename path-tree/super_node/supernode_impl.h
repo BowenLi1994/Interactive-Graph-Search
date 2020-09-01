@@ -4,6 +4,7 @@
 
 #pragma once
 
+using namespace supernode;
 
 Supernode::Supernode(){
     id_=-1;
@@ -57,7 +58,7 @@ int Supernode::get_heavy_tree_size() const{
 
 void Supernode::print_all_nodes(){
     for(auto node: nodes_)
-        std::cout<<"node: "<<node->id()<<std::endl;
+        std::cout<<"node: "<<node->id()<<" depth: "<<node->depth()<<" sibling number: "<<node->sibling()<<" next sibling: "<<node->right_sibling()<<std::endl;
 }
 
 
