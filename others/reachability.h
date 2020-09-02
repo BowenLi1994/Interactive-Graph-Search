@@ -25,13 +25,18 @@ bool Reachability(Node& start,Node& target,int & step);
 
 
 bool Reachability(Node& start,Node& target,int & step){
+
+
+    bool result=false;
+
+    //std::cout<<"node: "<<start.id()<<" right sibling: "<<start.right_sibling()<<std::endl;
     
     if(!start.is_checked()){
         step++;
-        //std::cout<<"search: "<<start.id()<<"-->"<<target.id()<<std::endl;
+        //std::cout<<"search: "<<start.id()<<"-->"<<target.id();
     }
     else
-        //std::cout<<"repeat search: "<<start.id()<<"-->"<<target.id()<<std::endl;
+        //std::cout<<"repeat search: "<<start.id()<<"-->"<<target.id();
     
     
     
@@ -43,30 +48,46 @@ bool Reachability(Node& start,Node& target,int & step){
     
     //root node:
     if(start.depth()==0){
-        return true;
+        //std::cout<<" root!!! "<<std::endl;
+        result=true;
     }
     
     else{
         
         if(start.right_sibling()==-1){
-            if(target.id()>=start_node_id)
-                return true;
+            if(target.id()>=start_node_id){
+                //std::cout<<" right most "<<std::endl;
+                result=true;
+            }
             else
-                return false;
+                result=false;
             
         }
         else{
             int end_node_id=start.right_sibling();
             if(target.id()>=start_node_id && target.id()<end_node_id){
-                return true;
+                //std::cout<<"node: "<<start.id()<<" next right sibling: "<<start.right_sibling()<<std::endl;
+                result=true;
             }
             else
-                return false;
+                result=false;
             
         }
         
     }
-    return false;
+
+
+    if(result==true){
+        //std::cout<<"can reach"<<std::endl;
+    }
+    else
+    {
+       //std::cout<<"can't reach"<<std::endl;
+    }
+    
+
+
+    return result;
 
 }
 

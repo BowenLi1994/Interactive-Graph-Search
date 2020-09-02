@@ -7,14 +7,11 @@
 using namespace parser;
 /// This is currently a copy of the previous version but with the efficient
 /// tokanization.
-PathTreeParser::Supernode PathTreeParser::parse_single(
-    const std::string& tree_string,std::vector<Node *>& nodes_set) {
+PathTreeParser::Supernode PathTreeParser::parse_single(const std::string& tree_string,Node& tree_root) {
 
-
-    // for(auto node: nodes_set){
-    //     std::cout<<"node: "<<node.id()<<std::endl;
-    // }
-
+    //tree_root.print_all_label();
+  std::vector<Node*> nodes_set;
+  tree_root.pre_prosseing(nodes_set);
 
   int id_counter=0;
   std::vector<std::string> tokens = get_tokens(tree_string);
@@ -32,13 +29,17 @@ PathTreeParser::Supernode PathTreeParser::parse_single(
   } else { // Non-empty label.
     ++tokens_begin; // Advance tokens.
   }
-//     //std::cout<<match_str<<std::endl;
+    //std::cout<<match_str<<std::endl;
     Supernode sroot;
     sroot.set_id(id_counter);
     std::vector<int> ids_set=get_ids(match_str);
     
-    for(auto id: ids_set)
-        sroot.add_node(nodes_set[id]);
+    for(auto id: ids_set){
+
+      // std::cout<<"id: "<<id<<std::endl;
+      // std::cout<<"node: "<<nodes_set[id]->id()<<" depth: "<<nodes_set[id]->depth()<<" sibling: "<<nodes_set[id]->sibling()<<" next right sibling: "<<nodes_set[id]->right_sibling()<<std::endl;
+      sroot.add_node(nodes_set[id]);
+    }
 
     //sroot.print_all_nodes();
   
@@ -106,7 +107,7 @@ void PathTreeParser::parse_collection(std::vector<Supernode*>& path_trees_collec
   while (std::getline(trees_file, tree_string)) {
     std::cout<<"parse path-tree "<<tree_counter<<":"<<std::endl;
     Supernode* node=new Supernode;
-    *node=parse_single(tree_string,trees_collection[tree_counter].get_all_nodes());
+    *node=parse_single(tree_string,trees_collection[tree_counter]);
 //    Supernode node=parse_single(tree_string);
 //    node.print_heay_tree();
 ////    Supernode* sroot=new Supernode;

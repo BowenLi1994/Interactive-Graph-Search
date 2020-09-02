@@ -22,6 +22,7 @@ public:
 
 // Member functions
 public:
+
   Node(ConstReference label);
 
   /// Returns the number of children of this node.
@@ -78,7 +79,7 @@ public:
 
 
     void print_all_label();
-    void pre_prosseing();
+    void pre_prosseing(std::vector<Node*>& nodes_set);
     
     const bool is_checked();
     void set_check(bool flag);
@@ -88,8 +89,12 @@ public:
     void add_leaf(Node<Label>* child);
     std::vector<Node<Label>*>& get_leaf();
     
-    std::vector<Node<Label>*>& get_all_nodes();
+
     void add_node(Node<Label>* node);
+    std::vector<Node<Label>*>& get_all_nodes();
+
+    void traverse_tree(std::vector<Node<Label>*>& nodes_set);
+    
     
     
     
@@ -101,7 +106,7 @@ private:
   /// All children of this node.
   std::vector<Node<Label>> children_;
   std::vector<Node<Label>* > leaf_;
-  std::vector<Node<Label>* > all_nodes_;
+  std::vector<Node<Label>*> all_nodes_;
 
   /// Data representing the label of this node. Only this Node object owns it.
   Label label_;

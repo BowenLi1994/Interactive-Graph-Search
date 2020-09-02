@@ -2,6 +2,8 @@
 #pragma once
 using namespace node;
 
+
+
 template<class Label>
 Node<Label>::Node(ConstReference label){
     label_=label;
@@ -138,8 +140,9 @@ void Node<Label>::print_all_label(){
 
 
 template<class Label>
-void Node<Label>::pre_prosseing(){
-    
+void Node<Label>::pre_prosseing(std::vector<Node*>& nodes_set){
+
+    nodes_set.push_back(this);
     if(this->children_count()==0)
         return;
     
@@ -158,7 +161,7 @@ void Node<Label>::pre_prosseing(){
         }
         
          for(auto & child: this->get_children()){
-             child.pre_prosseing();
+             child.pre_prosseing(nodes_set);
          }
         
         
@@ -197,7 +200,7 @@ std::vector<Node<Label>*>& Node<Label>::get_leaf(){
 }
 
 template<class Label>
-std::vector<Node<Label>* >& Node<Label>::get_all_nodes(){
+std::vector<Node<Label>*>& Node<Label>::get_all_nodes(){
     
     return all_nodes_;
 }
@@ -205,8 +208,17 @@ std::vector<Node<Label>* >& Node<Label>::get_all_nodes(){
 template<class Label>
 void Node<Label>::add_node(Node<Label>* node){
 
+
+    //std::cout<<"adding ndoe: "<<node.id()<<std::endl;
     all_nodes_.push_back(node);
 }
 
 
-
+template<class Label>
+void Node<Label>::traverse_tree(std::vector<Node<Label>*>& nodes_set){
+    
+    nodes_set.push_back(this);
+    for(auto& child: this->get_children()){
+        child.traverse_tree(nodes_set);
+    }
+}

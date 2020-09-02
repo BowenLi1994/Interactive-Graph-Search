@@ -42,12 +42,16 @@ int main(int argc, const char * argv[]) {
     parser::PathTreeParser ptp;
     ptp.parse_collection(supernodes_collection,trees_collection,ptree_path+ptree_name);
 
+
+    //std::cout<<"supernodes collection size: "<<supernodes_collection.size()<<std::endl;
+
     //path_tree_generator::heavy_path_trees_collection_generator(trees_collection, supernodes_collection);
     
     int trees_number=(int)trees_collection.size();
     std::map<int, std::pair<int, int>> total_depth_step;
     
     for(int i=0;i<trees_number;i++){
+        std::cout<<"calculate tree: "<<i<<std::endl;
         int tree_size=trees_collection[i].get_tree_size();
         int total_steps=0;
         std::map<int, std::pair<int, int>> tree_depth_step;
@@ -57,19 +61,23 @@ int main(int argc, const char * argv[]) {
             target_node.set_id(j);
             bool found=0;
             int steps=0;
+            trees_collection[i].reset_checked();
+
+
             if(method=="baseline"){
                 steps=1;
                 baseline::Topdown(trees_collection[i], target_node, found, steps);
                
             }
             if(method=="ordered"){
+                
                 interleave::ordered(trees_collection[i],supernodes_collection[i],target_node,found,steps);
             }
 
             if(method=="outdegree"){
                 std::string sThre(argv[3]);
                 int threshold=std::stoi(sThre);
-                trees_collection[i].reset_checked();
+                //trees_collection[i].reset_checked();
                 adaptive::outdegree(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
             }
 
@@ -77,14 +85,14 @@ int main(int argc, const char * argv[]) {
             if(method=="sibling"){
                 std::string sThre(argv[3]);
                 int threshold=std::stoi(sThre);
-                trees_collection[i].reset_checked();
+                //trees_collection[i].reset_checked();
                 adaptive::sibling(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
             }
 
             if(method=="comprehensive"){
                 std::string sThre(argv[3]);
                 int threshold=std::stoi(sThre);
-                trees_collection[i].reset_checked();
+                //trees_collection[i].reset_checked();
                 adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
             }
 

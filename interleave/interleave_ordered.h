@@ -22,9 +22,9 @@ bool nodes_sort (const std::pair<int, int>& i,const std::pair<int, int>& j);
 
 void ordered(const Node &root, Supernode* sroot,Node& target,bool&found, int& steps){
      
-    //std::cout<<"root: "<<root.id()<<std::endl;
-    //std::cout<<"super node: "<<std::endl;
-    //sroot->print_all_nodes();
+    // std::cout<<"root: "<<root.id()<<std::endl;
+    // std::cout<<"super node: "<<std::endl;
+    // sroot->print_all_nodes();
     
     
 //    if(sroot->nodes_count()==1){
@@ -34,6 +34,7 @@ void ordered(const Node &root, Supernode* sroot,Node& target,bool&found, int& st
     if(found==false){
         
         int binary_index=binary::binary_search_supernode(sroot, target, steps);
+        //std::cout<<"binary search result: "<<binary_index<<std::endl;
 //        if(binary_index==0){
 //            steps--;
 //        }
@@ -53,7 +54,7 @@ void ordered(const Node &root, Supernode* sroot,Node& target,bool&found, int& st
         
         for(int i=0;i<(int)sort_vector.size();i++){
              int pos=sort_vector[i].first;
-             //std::cout<<"child: "<<sroot->getNodes()[binary_index]->get_children()[pos].id()<<std::endl;
+             //std::cout<<"child: "<<sroot->getNodes()[binary_index]->get_children()[pos].id()<<" right sibling: "<<sroot->getNodes()[binary_index]->get_children()[pos].right_sibling()<<std::endl;
              if(!sroot->is_contained(sroot->getNodes()[binary_index]->get_children()[pos].id())){
                  if(Reachability::Reachability(sroot->getNodes()[binary_index]->get_children()[pos], target, steps)){
                      child_flag=true;

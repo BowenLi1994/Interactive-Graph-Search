@@ -35,7 +35,9 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
     id_counter++;
     depth_counter++;
 
-    root.add_node(&root);
+    //root.add_node(root);
+
+    //std::cout<<"node: "<<root.get_all_nodes()[0]->id()<<"label: "<<root.get_all_nodes()[0]->label().to_string()<<std::endl;
 
   //std::string last_string="null";
   // Iterate all remaining tokens.
@@ -65,15 +67,14 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
         n.set_depth(depth_counter);
         id_counter++;
         depth_counter++;
-        //n.set_sibling((int)node_stack.back().get().children_count());
+
 
       // Move n to become a child.
       // Return reference from add_child to the 'new-located' object.
       // Put a reference to just-moved n (last child of its parent) on a stack.
 
-      root.add_node(&n);
     
-
+      //root.add_node(n);
       node_stack.push_back(std::ref(node_stack.back().get().add_child(n)));
     }
 
@@ -82,9 +83,13 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
       ++tokens_begin; // Advance tokens.
       depth_counter--;
     }
+
+
   }
-    
-  root.pre_prosseing();
+
+  //root.pre_prosseing();
+
+  //root.pre_prosseing();
   return root;
 }
 
