@@ -8,5 +8,9 @@ sequence:
 	$(CC) $(CXXFLAGS) ./sequence.cpp
 	$(CC) -o sequence *.o 
 
+random:
+	$(CC) $(CXXFLAGS) ./random.cpp
+	$(CC) -o random *.o 
+
 clean:
-	rm -f ./*.o ./*.d ./*exe ./*stackdump sequence 
+	rm -f ./*.o ./*.d ./*exe ./*stackdump sequence random

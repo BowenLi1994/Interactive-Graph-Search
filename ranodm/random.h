@@ -8,7 +8,7 @@ namespace random_generator{
 
 
 void uniform(int min, int max, int num_val,std::vector<int>& result);
-void normal(int mean,int stddev,int num_val,std::vector<int>& result);
+void normal(int max,int mean,int stddev,int num_val,std::vector<int>& result);
 void zipf(int max, int alpha,int num_val,std::vector<int>& result);
 
 
@@ -25,7 +25,7 @@ void uniform(int min, int max, int num_val,std::vector<int>& result){
 }
 
 
-void normal(int mean,int stddev,int num_val,std::vector<int>& result){
+void normal(int max, int mean,int stddev,int num_val,std::vector<int>& result){
 
 	Dist_Genrator *dist = new Dist_Normal(mean, stddev, time(NULL));
 
@@ -35,7 +35,7 @@ void normal(int mean,int stddev,int num_val,std::vector<int>& result){
 		do{
 			temp=dist->Next();
 		}
-		while(temp<0 || temp > 2* mean-1);
+		while(temp<0 || temp > max);
 
 
 		
