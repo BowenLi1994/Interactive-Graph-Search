@@ -11,9 +11,9 @@ Beauty-/home/bowen/igs_dataset/amazon/Beauty/Beauty.tree
 Books-/home/bowen/igs_dataset/amazon/Books/Books.tree
 All-/home/bowen/igs_dataset/amazon/All/All.tree
 deep-/home/bowen/igs_dataset/amazon/manual/deep.tree
-singel_case1-/home/bowen/igs_dataset/unit_test/singel_case1.tree
-singel_case2-/home/bowen/igs_dataset/unit_test/singel_case2.tree
-singel_case3-/home/bowen/igs_dataset/unit_test/singel_case3.tree
+single_case1-/home/bowen/igs_dataset/unit_test/single_case1.tree
+single_case2-/home/bowen/igs_dataset/unit_test/single_case2.tree
+single_case3-/home/bowen/igs_dataset/unit_test/single_case3.tree
 combine-/home/bowen/igs_dataset/amazon/manual/combine.tree
 All10000-/home/bowen/igs_dataset/amazon/manual/All10000.tree
 All10-/home/bowen/igs_dataset/amazon/manual/All10.tree

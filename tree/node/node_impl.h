@@ -11,6 +11,7 @@ Node<Label>::Node(ConstReference label){
     sibling_number_=1;
     nex_right_sibling_=-1;
     checked_=false;
+    frequency_=0;
 
 } 
 
@@ -222,3 +223,16 @@ void Node<Label>::traverse_tree(std::vector<Node<Label>*>& nodes_set){
         child.traverse_tree(nodes_set);
     }
 }
+
+template<class Label>
+void Node<Label>::add_frequency(){
+     frequency_++;
+}
+
+template<class Label>
+int Node<Label>::frequency(){
+
+    return frequency_;
+}
+
+

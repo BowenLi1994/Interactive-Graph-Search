@@ -95,6 +95,8 @@ public:
 
     void traverse_tree(std::vector<Node<Label>*>& nodes_set);
     
+    void add_frequency();
+    int frequency();
     
     
     
@@ -116,6 +118,7 @@ private:
   int id_;
   int depth_;
   bool checked_;
+  int frequency_;
 };
 
 // Implementation details

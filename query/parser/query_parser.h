@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../query.h"
 #include "../../others/others.h"
 #include <vector>
