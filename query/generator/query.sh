@@ -1,10 +1,38 @@
 #!/bin/bash
-for name in bolzano single_case1 single_case2 single_case3
+COMMAND=./run
+
+
+TYPE1=log
+TYPE2=query
+DISTRIBUTION1=zipf
+DISTRIBUTION2=uniform
+
+KIND=theta
+THRESHOLD=2
+
+#log-file zipf 2.0
+for name in combine100 combine1000 combine10000 
 do
-    ./run log $name normal theta 2
+    $COMMAND $TYPE1 $name $DISTRIBUTION1 $KIND $THRESHOLD &
 done    
     
+#query-file zipf 2.0
+for name in combine100 combine1000 combine10000 
+do
+    $COMMAND $TYPE2 $name $DISTRIBUTION1 $KIND $THRESHOLD &
+done  
 
+#log-file uniform 2.0
+for name in combine100 combine1000 combine10000 
+do
+    $COMMAND $TYPE1 $name $DISTRIBUTION2 $KIND $THRESHOLD &
+done
+
+#query-file uniform 2.0
+for name in combine100 combine1000 combine10000 
+do
+    $COMMAND $TYPE2 $name $DISTRIBUTION2 $KIND $THRESHOLD &
+done  
 
 
 

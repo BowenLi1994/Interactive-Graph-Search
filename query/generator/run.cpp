@@ -50,7 +50,7 @@ int main(int argc, const char * argv[]) {
 
     std::string filepath;
     filepath=functions::getFilePath(filename);
-    if(filename=="null")
+    if(filename=="NULL")
         return 0;
    
     // //std::cout<<filepath<<std::endl;

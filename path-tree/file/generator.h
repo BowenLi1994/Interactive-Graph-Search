@@ -17,6 +17,7 @@ void generator(std::vector<Supernode *>& supernodes_collection,std::vector<std::
 void singel_generator(Supernode * sroot,std::string& path_string);
 std::string nodes_combine(Supernode* snode);
 
+void singel_ftree_generator(Supernode * sroot,std::string& path_string);
 
 
 void generator(std::vector<Supernode *>& supernodes_collection,std::vector<std::string>& paths_string){
@@ -59,7 +60,9 @@ void singel_generator(Supernode * sroot, std::string& path_string){
 }
 
 
-     
+
+
+
     
 }
 

@@ -17,6 +17,7 @@
 #include "../tree/label/string_label.h"
 #include "../tree/node/node.h"
 #include "../others/reachability.h"
+#include "../path-tree/path-tree.h"
 
 
 using Label=label::StringLabel;

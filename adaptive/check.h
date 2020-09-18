@@ -1,17 +1,13 @@
-//
-//  adaptive_sbling.h
-//  adaptive_sbling
-//
-//  Created by Bowen Li on 4/8/20.
-//  Copyright © 2020 Bowen Li. All rights reserved.
-//
-
 #pragma once
 
 #include <vector>
+#include <iostream>
 #include <utility>
 #include <algorithm>
 #include <typeinfo>
+
+#include "../interleave/interleave_ordered.h"
+#include "../path-tree/path-tree.h"
 
 namespace  adaptive{
 
@@ -22,6 +18,17 @@ using Supernode=supernode::Supernode;
 
 int check_children_reachablity(Node & node, Node& target, int& steps);
 
+struct tree_parameter{
+    
+    int tree_size;
+    int tree_fanout;
+    int tree_path;
+    
+};
+
+
+struct tree_parameter tree_analyse(Node& node);
+void get_depth_recusive(Node& node, std::vector<int>& depth);
 
 int check_children_reachablity(Node & node, Node& target, int& steps){
     //std::cout<<"checking"<<std::endl;
@@ -57,8 +64,85 @@ int check_children_reachablity(Node & node, Node& target, int& steps){
 
 
 
+struct tree_parameter tree_analyse(Node& node){
+    struct tree_parameter result;
+    std::vector<int> depth_set;
+    get_depth_recusive(node, depth_set);
+
+//    for(auto depth:depth_set){
+//        std::cout<<"node depth: "<<depth<<std::endl;
+//    }
+
+    std::map<int, int> depth_map;
+    //int max_depth;
+    
+    for(auto depth : depth_set){
+        std::map<int,int>::iterator it;
+        it=depth_map.find(depth);
+        if(it!=depth_map.end()){
+            it->second++;
+        }
+        else{
+            depth_map.emplace(depth, 1);
+        }
+    }
+    
+    int size_temp;
+    int path_temp;
+    int width_temp;
+
+    // for(auto it = depth_map.cbegin(); it != depth_map.cend(); ++it){
+    //     std::cout <<it->first << " " << it->second<< "\n";
+    // }
+    // for(auto map: depth_map){
+    //     std:cout<<" depth: "<<map.first<<" number: "<<map.second<<std::endl;
+    // }
+    
+    if(depth_map.size()==0){
+        size_temp=path_temp=width_temp=0;
+    }
+    else if(depth_map.size()==1){
+        size_temp=1;
+        path_temp=1;
+        width_temp=1;
+    }
+    else{
+        size_temp=node.get_tree_size();
+        std::map<int, int>::iterator it=depth_map.end();
+        path_temp=(--it)->first-depth_map.begin()->first+1;
+        //std::cout<<"length: "<<path_temp<<std::endl;
+
+        // std::cout<<"begin: "<<depth_map.begin()->first<<" "<<depth_map.begin()->second<<std::endl;
+        
+
+        // std::cout<<"end: "<<(--it)->first<<" "<<depth_map.end()->second<<std::endl;
+        int max_value=0;
+        for(auto pair :depth_map){
+            if(pair.second>max_value)
+                max_value=pair.second;
+        }
+        width_temp=max_value;
+        
+
+    }
+    
+    result.tree_fanout=width_temp;
+    result.tree_path=path_temp;
+    result.tree_size=size_temp;
+    
+    
+    return result;
+}
 
 
+
+void get_depth_recusive(Node& node, std::vector<int>& depth){
+    
+    depth.push_back(node.depth());
+    for(auto& child: node.get_children()){
+        get_depth_recusive(child, depth);
+    }
+}
 
 
 

@@ -58,7 +58,7 @@ int Supernode::get_heavy_tree_size() const{
 
 void Supernode::print_all_nodes(){
     for(auto node: nodes_)
-        std::cout<<"node: "<<node->id()<<" depth: "<<node->depth()<<" sibling number: "<<node->sibling()<<" next sibling: "<<node->right_sibling()<<std::endl;
+        std::cout<<"node: "<<node->id()<<" depth: "<<node->depth()<<" sibling number: "<<node->sibling()<<" next sibling: "<<node->right_sibling()<<" frequency: "<<node->frequency()<<std::endl;
 }
 
 

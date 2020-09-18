@@ -12,24 +12,26 @@
 #include "../binary-search/binary_supernode.h"
 #include "../query/query.h"
 #include "../query/parser/query_parser.h"
+#include "../log/log.h"
 
 #include "experiment.h"
 
 
-using Label=label::StringLabel;
-using Node=node::Node<Label>;
-using Supernode=supernode::Supernode;
-using Query=query::Query;
+
 
 
 int main(int argc, const char * argv[]) {
+
+    using Label=label::StringLabel;
+    using Node=node::Node<Label>;
+    using Supernode=supernode::Supernode;
+    using Query=query::Query;
+    using Log=query::Query;
     
     std::string method(argv[1]);
     std::string filename(argv[2]);
     std::string query_name(argv[3]);
-
-
-    
+   
     std::string filepath;
     filepath=functions::getFilePath(filename);
     if(filename=="null")
@@ -40,7 +42,8 @@ int main(int argc, const char * argv[]) {
     std::vector<Node> trees_collection;
     parser::BracketNotationParser bnp;
     bnp.parse_collection(trees_collection,filepath);
-    
+
+    //heavy-path tree
     std::vector<Supernode *> supernodes_collection;
     std::string ptree_path="/home/bowen/igs_dataset/path-tree/";
     std::string ptree_name=filename+".ptree";
@@ -48,9 +51,22 @@ int main(int argc, const char * argv[]) {
     ptp.parse_collection(supernodes_collection,trees_collection,ptree_path+ptree_name);
 
 
+    //generate query files
     std::string query_path="/home/bowen/igs_dataset/query/";
     std::vector<Query> query_collection;
-    query_parser::parse_collection(query_collection,query_path+query_name);
+    query_parser::parse_collection(query_collection,query_path+query_name+".query");
+
+
+    //anylysis log file
+    std::string log_path="/home/bowen/igs_dataset/log/";
+    std::vector<Log> log_collection;
+    if(method=="frequency"||method=="frequency2")
+        log_file::log_analysis(trees_collection,log_path+query_name+".log");
+
+    std::string ftrees_path="/home/bowen/igs_dataset/frequency-tree/";
+    std::vector<Supernode *> ftree_collection;
+    if(method=="frequency2")
+        ptp.parse_collection(ftree_collection,trees_collection,ftrees_path+query_name+".ftree");
     
     
     int trees_number=(int)trees_collection.size();
@@ -82,6 +98,13 @@ int main(int argc, const char * argv[]) {
                 interleave::ordered(trees_collection[i],supernodes_collection[i],target_node,found,steps);
             }
 
+            // if(method=="ordered2"){                
+            //     interleave::ordered(trees_collection[i],ftree_collection[i],target_node,found,steps);
+            // }
+
+
+
+
             if(method=="outdegree"){
                 std::string sThre(argv[4]);
                 int threshold=std::stoi(sThre);
@@ -93,6 +116,14 @@ int main(int argc, const char * argv[]) {
                 int threshold=std::stoi(sThre);
                 adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
 
+            }
+
+            if(method=="frequency"){
+                interleave::frequency(trees_collection[i],supernodes_collection[i],target_node,found,steps);
+            }
+
+            if(method=="frequency2"){
+                interleave::frequency(trees_collection[i],ftree_collection[i],target_node,found,steps);
             }
 
 

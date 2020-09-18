@@ -113,7 +113,7 @@ int Node<Label>::right_sibling() const{
 template<class Label>
 void Node<Label>::print_all_label(){
     
-    std::cout<<"label id: "<<this->id()<<" depth: "<<this->depth()<<" sibling number: "<<this->sibling()<<" next sibling: "<<this->right_sibling()<<std::endl;
+    std::cout<<"label id: "<<this->id()<<" depth: "<<this->depth()<<" sibling number: "<<this->sibling()<<" next sibling: "<<this->right_sibling()<<" frequency: "<<this->frequency()<<std::endl;
     
     //this->print_parent();
     int child_counter=0;
@@ -155,6 +155,9 @@ void Node<Label>::pre_prosseing(std::vector<Node*>& nodes_set){
             child.set_sibling((int)this->children_count());
             if(child_counter!=(int)this->children_count()-1){
                 child.set_right_sibling(this->get_children()[child_counter+1].id());
+            }
+            else{
+                child.set_right_sibling(this->right_sibling());
             }
             
             
@@ -235,4 +238,27 @@ int Node<Label>::frequency(){
     return frequency_;
 }
 
+template<class Label>
+int Node<Label>::get_tree_frequency() const {
 
+  int frequency = frequency_;
+  for (const auto& child : children_) {
+    frequency += child.get_tree_frequency();
+  }
+  return frequency;
+  
+}
+
+
+template<class Label>
+void  Node<Label>::print_all_nodes(){
+    
+    std::vector<Node<Label> *> nodes_set;
+
+    this->traverse_tree(nodes_set);
+
+    for(auto node: nodes_set)
+        std::cout<<"node: "<<node->id()<<" depth: "<<node->depth()<<" right sibling: "<<node->right_sibling()<<std::endl;
+
+
+}

@@ -97,6 +97,10 @@ public:
     
     void add_frequency();
     int frequency();
+
+    int get_tree_frequency() const;
+
+    void print_all_nodes();
     
     
     

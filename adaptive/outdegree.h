@@ -1,17 +1,10 @@
-//
-//  adaptive_interleave.h
-//  adaptive
-//
-//  Created by Bowen Li on 3/30/20.
-//  Copyright © 2020 Bowen Li. All rights reserved.
-//
-
 #pragma once
 
 #include <vector>
 #include <utility>
 #include <algorithm>
 #include <typeinfo>
+#include "check.h"
 
 namespace  adaptive{
 

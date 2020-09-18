@@ -96,6 +96,10 @@ int main(int argc, const char * argv[]) {
                 adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
             }
 
+            if(method=="compared"){
+                adaptive::compared(trees_collection[i],target_node,supernodes_collection[i],found,steps);
+            }
+
             total_steps+=steps;
             std::map<int, std::pair<int, int>>::iterator it;
             it=tree_depth_step.find(target_node.depth());

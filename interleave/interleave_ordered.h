@@ -9,6 +9,8 @@
 #include <utility>
 #include <vector>
 
+#include "../binary-search/binary_supernode.h"
+
 namespace interleave {
 
 using Label=label::StringLabel;
@@ -65,6 +67,8 @@ void ordered(const Node &root, Supernode* sroot,Node& target,bool&found, int& st
          }
             
         if(!child_flag){
+
+            //std::cout<<"target node: "<<sroot->getNodes()[binary_index]->id()<<std::endl;
             target.set_depth(sroot->getNodes()[binary_index]->depth());
             found=true;
         }
