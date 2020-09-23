@@ -113,8 +113,10 @@ int main(int argc, const char * argv[]) {
 
             if(method=="comprehensive"){
                 std::string sThre(argv[4]);
+                std::string sAlpha(argv[5]);
                 int threshold=std::stoi(sThre);
-                adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
+                double alpha=std::stod(sAlpha);
+                adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold,alpha);
 
             }
 

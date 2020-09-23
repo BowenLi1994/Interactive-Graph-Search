@@ -61,8 +61,12 @@ void concatnate(std::string filename, int trees_number){
         int trees_pos2=rand()%(int)trees_collection.size();
         trees_collection[trees_pos].get_leaf()[leaves_pos]->add_child(trees_collection[trees_pos2]);
 
+        Label target_label("root");
+        Node fake_root(target_label);
+        fake_root.add_child(trees_collection[trees_pos]);
+
         std::string temp;
-        tree_string(trees_collection[trees_pos],temp);
+        tree_string(fake_root,temp);
 
         outfile<<temp;
         outfile<<"\n";

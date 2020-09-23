@@ -1,0 +1,560 @@
+parse tree:0
+label id: 0 depth: 0 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 1
+label id: 1 depth: 1 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 2
+child 1: id: 3
+child 2: id: 6
+child 3: id: 7
+child 4: id: 8
+child 5: id: 9
+child 6: id: 10
+child 7: id: 11
+label id: 2 depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 3 depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 4
+label id: 4 depth: 3 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 5
+label id: 5 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id:       depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 7 depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 8 depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 9 depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 10 depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 11 depth: 2 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 12
+child 1: id: 22
+child 2: id: 136
+child 3: id: 139
+label id: 12 depth: 3 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 13
+child 1: id: 14
+child 2: id: 15
+child 3: id: 16
+child 4: id: 17
+child 5: id: 18
+child 6: id: 19
+child 7: id: 20
+child 8: id: 21
+label id: 13 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 14 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 15 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 16 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 17 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 18 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 19 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 20 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 21 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 22 depth: 3 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 23
+child 1: id: 24
+child 2: id: 25
+child 3: id: 26
+child 4: id: 27
+child 5: id: 28
+child 6: id: 29
+child 7: id: 30
+child 8: id: 31
+child 9: id: 32
+child 10: id: 33
+child 11: id: 34
+child 12: id: 35
+child 13: id: 36
+child 14: id: 37
+child 15: id: 38
+child 16: id: 39
+child 17: id: 40
+child 18: id: 41
+child 19: id: 42
+child 20: id: 43
+child 21: id: 117
+child 22: id: 118
+child 23: id: 119
+child 24: id: 120
+child 25: id: 121
+child 26: id: 122
+child 27: id: 123
+child 28: id: 124
+child 29: id: 125
+child 30: id: 126
+child 31: id: 127
+child 32: id: 128
+child 33: id: 129
+child 34: id: 130
+child 35: id: 131
+child 36: id: 132
+child 37: id: 133
+child 38: id: 134
+child 39: id: 135
+label id: 23 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 24 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 25 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 26 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 27 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 28 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 29 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 30 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 31 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 32 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 33 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 34 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 35 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 36 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 37 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 38 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 39 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 40 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 41 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 42 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 43 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 44
+label id: 44 depth: 5 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 45
+child 1: id: 46
+child 2: id: 47
+child 3: id: 48
+child 4: id: 49
+child 5: id: 50
+child 6: id: 114
+label id: 45 depth: 6 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 46 depth: 6 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 47 depth: 6 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 48 depth: 6 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 49 depth: 6 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 50 depth: 6 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 51
+child 1: id: 109
+label id: 51 depth: 7 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 52
+child 1: id: 53
+child 2: id: 54
+child 3: id: 55
+child 4: id: 56
+child 5: id: 57
+child 6: id: 58
+child 7: id: 59
+child 8: id: 60
+child 9: id: 61
+child 10: id: 62
+child 11: id: 63
+child 12: id: 64
+child 13: id: 65
+child 14: id: 66
+child 15: id: 67
+child 16: id: 68
+child 17: id: 69
+child 18: id: 70
+child 19: id: 71
+child 20: id: 72
+child 21: id: 73
+child 22: id: 74
+child 23: id: 75
+child 24: id: 76
+child 25: id: 77
+child 26: id: 78
+child 27: id: 79
+child 28: id: 80
+child 29: id: 81
+child 30: id: 82
+child 31: id: 83
+child 32: id: 84
+child 33: id: 85
+child 34: id: 86
+child 35: id: 87
+child 36: id: 88
+child 37: id: 89
+child 38: id: 90
+child 39: id: 91
+child 40: id: 92
+child 41: id: 93
+child 42: id: 94
+child 43: id: 95
+child 44: id: 96
+child 45: id: 97
+child 46: id: 98
+child 47: id: 99
+child 48: id: 100
+child 49: id: 101
+child 50: id: 102
+child 51: id: 103
+child 52: id: 104
+child 53: id: 105
+child 54: id: 106
+child 55: id: 107
+child 56: id: 108
+label id: 52 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 53 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 54 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 55 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 56 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 57 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 58 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 59 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 60 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 61 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 62 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 63 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 64 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 65 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 66 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 67 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 68 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 69 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 70 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 71 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 72 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 73 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 74 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 75 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 76 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 77 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 78 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 79 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 80 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 81 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 82 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 83 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 84 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 85 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 86 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 87 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 88 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 89 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 90 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 91 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 92 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 93 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 94 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 95 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 96 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 97 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 98 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 99 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 100 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 101 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 102 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 103 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 104 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 105 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 106 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 107 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 108 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 109 depth: 7 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 110
+child 1: id: 111
+child 2: id: 112
+child 3: id: 113
+label id: 110 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 111 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 112 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 113 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 114 depth: 6 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 115
+label id: 115 depth: 7 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 116
+label id: 116 depth: 8 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 117 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 118 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 119 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 120 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 121 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 122 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 123 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 124 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 125 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 126 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 127 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 128 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 129 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 130 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 131 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 132 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 133 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 134 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 135 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 136 depth: 3 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 137
+child 1: id: 138
+label id: 137 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 138 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 139 depth: 3 sibling number: 1 next sibling: -1 frequency: 0
+child 0: id: 140
+child 1: id: 141
+child 2: id: 142
+child 3: id: 143
+label id: 140 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 141 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 142 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+label id: 143 depth: 4 sibling number: 1 next sibling: -1 frequency: 0
+Leaf Node.
+node: 0 alpha1: 6.2 alpha2: 74.4 alpha3: 892.8
+node: 1 alpha1: 6.88889 alpha2: 82.3791 alpha3: 985.111
+node: 2 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 3 alpha1: 0.25 alpha2: 0.433013 alpha3: 0.75
+node: 4 alpha1: 0.333333 alpha2: 0.471405 alpha3: 0.666667
+node: 5 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 6 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 7 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 8 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 9 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 10 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 11 alpha1: 7.75 alpha2: 89.3774 alpha3: 1030.75
+node: 12 alpha1: 3 alpha2: 9.48683 alpha3: 30
+node: 13 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 14 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 15 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 16 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 17 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 18 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 19 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 20 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 21 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 22 alpha1: 8.85714 alpha2: 94.5684 alpha3: 1009.71
+node: 23 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 24 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 25 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 26 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 27 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 28 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 29 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 30 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 31 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 32 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 33 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 34 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 35 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 36 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 37 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 38 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 39 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 40 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 41 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 42 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 43 alpha1: 10.3333 alpha2: 88.8907 alpha3: 764.667
+node: 44 alpha1: 12.4 alpha2: 105.946 alpha3: 905.2
+node: 45 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 46 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 47 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 48 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 49 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 50 alpha1: 15.25 alpha2: 122 alpha3: 976
+node: 51 alpha1: 19 alpha2: 144.7 alpha3: 1102
+node: 52 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 53 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 54 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 55 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 56 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 57 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 58 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 59 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 60 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 61 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 62 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 63 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 64 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 65 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 66 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 67 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 68 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 69 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 70 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 71 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 72 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 73 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 74 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 75 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 76 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 77 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 78 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 79 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 80 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 81 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 82 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 83 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 84 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 85 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 86 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 87 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 88 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 89 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 90 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 91 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 92 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 93 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 94 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 95 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 96 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 97 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 98 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 99 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 100 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 101 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 102 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 103 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 104 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 105 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 106 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 107 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 108 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 109 alpha1: 1.33333 alpha2: 2.98142 alpha3: 6.66667
+node: 110 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 111 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 112 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 113 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 114 alpha1: 0.25 alpha2: 0.433013 alpha3: 0.75
+node: 115 alpha1: 0.333333 alpha2: 0.471405 alpha3: 0.666667
+node: 116 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 117 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 118 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 119 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 120 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 121 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 122 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 123 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 124 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 125 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 126 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 127 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 128 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 129 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 130 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 131 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 132 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 133 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 134 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 135 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 136 alpha1: 0.666667 alpha2: 1.1547 alpha3: 2
+node: 137 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 138 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 139 alpha1: 1.33333 alpha2: 2.98142 alpha3: 6.66667
+node: 140 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 141 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 142 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5
+node: 143 alpha1: 0.5 alpha2: 0.5 alpha3: 0.5

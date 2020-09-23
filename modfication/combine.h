@@ -48,12 +48,20 @@ int  combine(std::string filename, int trees_number) {
         int tree_size=rand()%999+1;
         Label target_label("root");
         Node root(target_label);
+
+        Label target_label1("fake_root");
+        Node fake_root(target_label1);
+
+
+
         for(int j=0;j<tree_size;j++){
             int trees_pos=rand()%(int)trees_collection.size();
             root.add_child(trees_collection[trees_pos]);
         }
+
+        fake_root.add_child(root);
         std::string temp;
-        tree_string(root,temp);
+        tree_string(fake_root,temp);
 
         outfile<<temp;
         outfile<<"\n";

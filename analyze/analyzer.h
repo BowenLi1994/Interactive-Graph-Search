@@ -46,6 +46,12 @@ struct analyze_result analyze(std::vector<Node>& trees_collection){
     int sum_fanout=0;
     
     for(auto& tree:trees_collection){
+
+        std::vector<Node *> nodes_set;
+        tree.pre_prosseing(nodes_set);
+        // for(auto node: nodes_set){
+        //     std::cout<<node->sibling()<<std::endl;
+        // }
         if(tree.get_tree_size()>max_size)
             max_size=tree.get_tree_size();
         sum_size+=tree.get_tree_size();

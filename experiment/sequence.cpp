@@ -92,8 +92,14 @@ int main(int argc, const char * argv[]) {
             if(method=="comprehensive"){
                 std::string sThre(argv[3]);
                 int threshold=std::stoi(sThre);
+                std::string sAlpha1(argv[4]);
+                double alpha1=std::stod(sAlpha1);
+                std::string sAlpha2(argv[5]);
+                double alpha2=std::stod(sAlpha2);
+                std::string sAlpha3(argv[6]);
+                double alpha3=std::stod(sAlpha3);
                 //trees_collection[i].reset_checked();
-                adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold);
+                adaptive::comprehensive(trees_collection[i],target_node,supernodes_collection[i],found,steps,threshold,alpha1,alpha2,alpha3);
             }
 
             if(method=="compared"){
