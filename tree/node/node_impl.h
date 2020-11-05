@@ -262,3 +262,8 @@ void  Node<Label>::print_all_nodes(){
 
 
 }
+
+template<class Label>
+void  Node<Label>::add_childs(Node<Label>* child){
+    children_.push_back(std::ref(*child));
+}

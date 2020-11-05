@@ -7,7 +7,7 @@ using namespace parser;
 /// tokanization.
 node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
     const std::string& tree_string) {
-
+ 
     
   int id_counter=0;
   int depth_counter=0;

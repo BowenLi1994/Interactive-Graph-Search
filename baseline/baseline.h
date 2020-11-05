@@ -17,15 +17,18 @@
 #include "../tree/label/string_label.h"
 #include "../tree/node/node.h"
 #include "../others/reachability.h"
+#include "../dag/dag.h"
 
 using Label=label::StringLabel;
 using Node=node::Node<Label>;
+using DAG_Node=dag::Node<Label>;
 
 namespace baseline{
 
 
 
 void Topdown(Node &root, Node& target,bool & found,int &step);
+void Topdown_DAG(DAG_Node &root, DAG_Node& target,bool & found,int &step);
 
 
 
@@ -53,6 +56,25 @@ void Topdown(Node &root, Node& target,bool &found,int& step){
                    
     }
         
+}
+
+void Topdown_DAG(DAG_Node &root, DAG_Node& target,bool & found,int &step){
+     
+     
+    bool child_reach_target=false;
+
+    //step++;
+
+    for(auto child:root.get_children()){
+        // if(!found){
+        //     if(Reachability::Reachability(child, target,step)){
+        //              child_reach_target=true;
+        //              Topdown(child, target,found, step);
+        //     }
+        // }
+                   
+    }
+
 }
 
 

@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <string>
+#include <functional>
 
 namespace node {
 
@@ -38,6 +39,8 @@ public:
   
   /// param Node to be added.
   Node<Label>& add_child(Node<Label> child);
+
+ 
 
   /// Returns the reference to children_ vector.
   ///
@@ -102,6 +105,7 @@ public:
 
     void print_all_nodes();
     
+    void add_childs(Node<Label>* child);
     
     
     
